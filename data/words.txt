@@ -1,0 +1,14 @@
+1. python
+2. vim
+3. python
+4. php
+5. python
+6. java
+7. go
+8. python
+9. python
+10. python
+11. python
+12. C
+13. C++
+14. python

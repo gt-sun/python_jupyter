@@ -2,7 +2,11 @@
 
 # 算法
 
-## 查找算法
+## 排序算法
+
+### 冒泡排序
+
+
 
 ### 快速排序
 
@@ -31,7 +35,7 @@ def qsort(x):
 
 #### 代码
 
-- 代码1
+- 代码1 使用2个for循环
 
 ```python
 def insert_sort(x):
@@ -43,6 +47,22 @@ def insert_sort(x):
     return x
 
 ```
+
+- 代码2 使用for-while循环
+
+```python
+def insert_sort(seq):
+    for i in range(len(seq)):   
+        j = i
+        if seq[j-1] == seq[j]: continue
+        while j > 0 and seq[j-1] > seq[j]:
+            seq[j],seq[j-1] = seq[j-1],seq[j]
+            j -= 1
+    return seq
+```
+
+
+## 查找算法
 
 ### 二分查找
 
@@ -74,7 +94,4 @@ def foo(x, t):
     return p
 ```
 
-
-
-## 排序算法
 

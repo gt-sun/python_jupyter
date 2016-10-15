@@ -27,6 +27,41 @@ def bubble_sort(x):
     return x
 ```
 
+优化 1：某一趟遍历如果没有数据交换，则说明已经排好序了，因此不用再进行迭代了。
+用一个标记记录这个状态即可。
+
+```python
+def bubble_sort(x):
+    n = len(x)
+    for i in range(n):
+        flag = 1
+        for j in range(1, n-i): #这里从1开始，因为下面是j-1
+            if x[j-1] > x[j]:
+                x[j-1],x[j] = x[j],x[j-1]
+            flag = 0
+        if flag:
+            break
+    return x
+```
+
+优化2： 录某次遍历时最后发生数据交换的位置，这个位置之后的数据显然已经有序了。因此通过记录最后发生数据交换的位置就可以确定下次循环的范围了。
+
+```python
+def bubble_sort(ary):
+    n = len(ary)
+    k = n                           #k 为循环的范围，初始值 n
+    for i in range(n):
+        flag = 1
+        for j in range(1,k):        #只遍历到最后交换的位置即可
+             if  ary[j-1] > ary[j] :
+                ary[j-1],ary[j] = ary[j],ary[j-1]
+                k = j               #记录最后交换的位置
+                flag = 0
+        if flag :
+            break
+    return ary
+```
+
 ### 快速排序
 
 #### 思路

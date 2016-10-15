@@ -4,6 +4,29 @@
 
 ## 排序算法
 
+### 选择排序
+
+#### 思路
+
+1. 在未排序序列中找到最小（大）元素，存放到排序序列的起始位置。
+2. 再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。
+3. 以此类推，直到所有元素均排序完毕。
+
+#### 代码
+
+```python
+def select_sort(ary):
+    n = len(ary)
+    for i in range(n):
+        min = i #最小值的索引
+        for j in range(i+1, n):
+            if ary[j] < ary[min]:
+                min = j
+        ary[min],ary[i] = ary[i],ary[min]
+    return ary
+
+```
+
 ### 冒泡排序
 
 #### 思路

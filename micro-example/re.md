@@ -8,7 +8,6 @@
 ### 匹配中文
 
 ```python
-
 ....
 re.findall(u'([\u4e00-\u9fa5]+)', text)
 ....
